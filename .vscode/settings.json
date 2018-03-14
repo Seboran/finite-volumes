@@ -1,0 +1,5 @@
+{
+    "latex-workshop.debug.showUpdateMessage": false,
+    "git.ignoreLimitWarning": true,
+    "python.linting.enabled": false
+}
