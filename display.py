@@ -78,6 +78,5 @@ def export_animation(ani, title):
     
     ani.save('animations/animation' + title + '.mp4', dpi=80, writer= writer)
     os.system("ffmpeg -i animations/animation" + title + ".mp4 gifs\\animation" + title + ".gif")
-
     
 

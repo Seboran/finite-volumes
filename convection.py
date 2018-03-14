@@ -206,33 +206,33 @@ ani_test_3 = animate("test 3", mesh, t, [P, P_exacte], ["Solution approchée", "
 # Paramètres d'initalisation
 D = 1
 Xis = [0.1, 0.5, 0.9, 1, 2.0, 4.]
-number = 51
+number = 5
 mesh = generer_carre(number)
 centres = mesh.centres
-# for Xi in Xis:
+for Xi in Xis:
         
-#     T = 20
-#     N = 200
-#     dt = T / N
+    T = 20
+    N = 200
+    dt = T / N
     
     
     
 
-#     # Solution initiale
-#     def rho_0_4(x1, x2):
-#         sigma = 5 * 10e-3
-#         return 5. / sigma * exp(-((x1 - 0.5) ** 2 
-#                 + (x2 - 0.5) ** 2) / (2 * sigma))
+    # Solution initiale
+    def rho_0_4(x1, x2):
+        sigma = 5 * 10e-3
+        return 5. / sigma * exp(-((x1 - 0.5) ** 2 
+                + (x2 - 0.5) ** 2) / (2 * sigma))
 
-#     # Résolution numérique et affichage
-#     t = np.linspace(0, T, N)
-#     S = resolution_temporelle(mesh, rho_0_4, T, N, Xi, D)
-#     P = []
-#     C = []
+    # Résolution numérique et affichage
+    t = np.linspace(0, T, N)
+    S = resolution_temporelle(mesh, rho_0_4, T, N, Xi, D)
+    P = []
+    C = []
 
-#     split_solutions(S, P, C)
-#     ani_test_4 = animate("test 4 Xi " + str(Xi), mesh, t, [P, C])
-#     animations.append([ani_test_4, "test4Xi" + str(Xi)])
+    split_solutions(S, P, C)
+    ani_test_4 = animate("test 4 Xi " + str(Xi), mesh, t, [P, C])
+    animations.append([ani_test_4, "test4Xi" + str(Xi)])
 
 #==============================================================================
 # Test 5
