@@ -77,6 +77,6 @@ def export_animation(ani, title):
     writer = Writer(fps=15, metadata=dict(artist='Nirina'), bitrate=1200)
     
     ani.save('animations/animation' + title + '.mp4', dpi=80, writer= writer)
-    os.system("ffmpeg -i animations/animation" + title + ".mp4 gifs\\animation" + title + ".gif")
-    
+    os.system("ffmpeg -i animations/animation" + title + ".mp4 gifs/animation" + title + ".gif")
+
 
