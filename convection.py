@@ -159,7 +159,7 @@ Xi = 1
 T = 0.5
 N = 100
 dt = T / N
-number = 21
+number = 51
 mesh = generer_carre(number)
 centres = mesh.centres
 
@@ -206,7 +206,7 @@ ani_test_3 = animate("test 3", mesh, t, [P, P_exacte], ["Solution approchée", "
 # Paramètres d'initalisation
 D = 1
 Xis = [0.1, 0.5, 0.9, 1, 2.0, 4.]
-number = 5
+number = 51
 mesh = generer_carre(number)
 centres = mesh.centres
 for Xi in Xis:
@@ -244,7 +244,7 @@ for Xi in Xis:
     T = 20
     N = 200
     dt = T / N
-    number = 5
+    number = 51
 
     t = np.linspace(0, T, N)
 
