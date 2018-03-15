@@ -13,6 +13,7 @@ from tqdm import tqdm
 erreurs = []
 numbers = [5, 11, 21, 51]
 
+
 animations = []
 
 def rho_0(x1, x2):
@@ -99,8 +100,8 @@ erreur = L2_t(erreur, dt)
 # On ajoute l'erreur dans notre plot d'erreurs
 erreurs.append(erreur)
 
-ani_test_2 = animate("Test 2", mesh, t, [P, P_exacte])
-#animations.append([ani_test_2, "test2"])
+ani_test_2 = animate("Test 2", mesh, t, [P, P_exacte], legends = ["Solution approchée", "Solution exacte"])
+animations.append([ani_test_2, "test2"])
 
 
 """ Nous allons générer des solutions pour un nombre croissant de volumes finis et ainsi calculer la convergence en espace"""
@@ -187,11 +188,10 @@ C = []
 
 split_solutions(S, P, C)
 # On compare la solution approchée et la solution exacte
-ani_test_3 = animate("test 3", mesh, t, [P, P_exacte], ["Solution approchée", "Solution exacte"])
-#animations.append([ani_test_3, "test3"])
+ani_test_3 = animate("test 3", mesh, t, [P, P_exacte], legends = ["Solution approchée", "Solution de référence"])
+animations.append([ani_test_3, "test3"])
 # Solution initiale
 
-#TODO : affichage temporel des solutions
 
 #==============================================================================
 # Test 4 et 5
@@ -206,13 +206,13 @@ ani_test_3 = animate("test 3", mesh, t, [P, P_exacte], ["Solution approchée", "
 # Paramètres d'initalisation
 D = 1
 Xis = [0.1, 0.5, 0.9, 1, 2.0, 4.]
-number = 51
+number = 21
 mesh = generer_carre(number)
 centres = mesh.centres
 for Xi in Xis:
         
     T = 20
-    N = 200
+    N = 100
     dt = T / N
     
     
@@ -242,9 +242,9 @@ D = 1
 
 for Xi in Xis:
     T = 20
-    N = 200
+    N = 100
     dt = T / N
-    number = 51
+    number = 21
 
     t = np.linspace(0, T, N)
 
@@ -267,6 +267,7 @@ for Xi in Xis:
 #==============================================================================
 # Enregistrement de toutes les animations (ne fonctionne que sur windows)
 #==============================================================================
+
 for elt in animations:
     ani, title = elt
     export_animation(ani, title)
